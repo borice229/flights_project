@@ -20,9 +20,15 @@ resources:
           default: ${var.catalog}
 
       tasks:
-        - task_key: notebook_task
+        - task_key: Bronze
           notebook_task:
             notebook_path: ../src/01_Ingestion_bronze.ipynb
+
+        - task_key: Silver
+          depends_on:
+            - task_key: Bronze
+          notebook_task:
+            notebook_path: ../src/02_silver_transformation.ipynb
 
       environments:
         - environment_key: default
