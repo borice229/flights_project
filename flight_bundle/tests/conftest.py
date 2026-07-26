@@ -20,7 +20,7 @@ except ImportError:
 
 @pytest.fixture()
 def spark() -> SparkSession:
-    """Provide a SparkSession fixture for tests.
+    """Provide a SparkSession fixture for tests yes.
 
     Minimal example:
         def test_uses_spark(spark):
